@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Catppuccin Mocha Color Scheme */
+  --background: hsl(240, 21%, 15%);
+  --foreground: hsl(226, 64%, 88%);
+  --muted: hsl(240, 23%, 9%);
+  --muted-foreground: hsl(228, 39%, 80%);
+  --popover: hsl(240, 21%, 15%);
+  --popover-foreground: hsl(226, 64%, 88%);
+  --card: hsl(240, 21%, 15%);
+  --card-foreground: hsl(226, 64%, 88%);
+  --border: hsl(237, 16%, 23%);
+  --input: hsl(237, 16%, 23%);
+  --primary: hsl(217, 92%, 76%);
+  --primary-foreground: hsl(240, 21%, 15%);
+  --secondary: hsl(240, 23%, 9%);
+  --secondary-foreground: hsl(226, 64%, 88%);
+  --accent: hsl(240, 23%, 9%);
+  --accent-foreground: hsl(226, 64%, 88%);
+  --destructive: hsl(343, 81%, 75%);
+  --destructive-foreground: hsl(240, 21%, 15%);
+  --ring: hsl(226, 64%, 88%);
+  --radius: 0.5rem;
+
+  /* Custom Catppuccin Mocha Variables */
+  --catppuccin-base: hsl(240, 21%, 15%);
+  --catppuccin-mantle: hsl(240, 23%, 9%);
+  --catppuccin-crust: hsl(240, 31%, 7%);
+  --catppuccin-text: hsl(226, 64%, 88%);
+  --catppuccin-subtext0: hsl(228, 39%, 80%);
+  --catppuccin-subtext1: hsl(227, 49%, 86%);
+  --catppuccin-surface0: hsl(237, 16%, 23%);
+  --catppuccin-surface1: hsl(240, 13%, 26%);
+  --catppuccin-surface2: hsl(240, 12%, 35%);
+  --catppuccin-overlay0: hsl(231, 16%, 47%);
+  --catppuccin-overlay1: hsl(232, 13%, 57%);
+  --catppuccin-overlay2: hsl(228, 17%, 62%);
+  --catppuccin-blue: hsl(217, 92%, 76%);
+  --catppuccin-lavender: hsl(232, 97%, 85%);
+  --catppuccin-sapphire: hsl(199, 76%, 69%);
+  --catppuccin-sky: hsl(189, 70%, 42%);
+  --catppuccin-teal: hsl(170, 57%, 73%);
+  --catppuccin-green: hsl(115, 54%, 76%);
+  --catppuccin-yellow: hsl(41, 88%, 83%);
+  --catppuccin-peach: hsl(22, 88%, 73%);
+  --catppuccin-red: hsl(343, 81%, 75%);
+  --catppuccin-mauve: hsl(267, 84%, 81%);
+  --catppuccin-pink: hsl(316, 73%, 84%);
+  --catppuccin-flamingo: hsl(2, 55%, 83%);
+  --catppuccin-rosewater: hsl(10, 56%, 91%);
+}
+
+.dark {
+  --background: hsl(240, 21%, 15%);
+  --foreground: hsl(226, 64%, 88%);
+  --muted: hsl(240, 23%, 9%);
+  --muted-foreground: hsl(228, 39%, 80%);
+  --popover: hsl(240, 21%, 15%);
+  --popover-foreground: hsl(226, 64%, 88%);
+  --card: hsl(240, 21%, 15%);
+  --card-foreground: hsl(226, 64%, 88%);
+  --border: hsl(237, 16%, 23%);
+  --input: hsl(237, 16%, 23%);
+  --primary: hsl(217, 92%, 76%);
+  --primary-foreground: hsl(240, 21%, 15%);
+  --secondary: hsl(240, 23%, 9%);
+  --secondary-foreground: hsl(226, 64%, 88%);
+  --accent: hsl(240, 23%, 9%);
+  --accent-foreground: hsl(226, 64%, 88%);
+  --destructive: hsl(343, 81%, 75%);
+  --destructive-foreground: hsl(240, 21%, 15%);
+  --ring: hsl(226, 64%, 88%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-mono antialiased;
+    background-color: var(--catppuccin-base);
+    color: var(--catppuccin-text);
+  }
+}
+
+@layer components {
+  .terminal-cursor::after {
+    content: '█';
+    color: var(--catppuccin-blue);
+    animation: blink 1s infinite;
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    border-right: 2px solid var(--catppuccin-blue);
+    white-space: nowrap;
+    animation: typing 2s steps(20, end), blink 1s infinite;
+  }
+
+  .section-hidden {
+    display: none;
+  }
+
+  .section-visible {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .ascii-art {
+    line-height: 1;
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .ascii-art {
+      font-size: 8px;
+    }
+  }
+}
+
+@layer utilities {
+  .text-catppuccin-base { color: var(--catppuccin-base); }
+  .text-catppuccin-mantle { color: var(--catppuccin-mantle); }
+  .text-catppuccin-crust { color: var(--catppuccin-crust); }
+  .text-catppuccin-text { color: var(--catppuccin-text); }
+  .text-catppuccin-subtext0 { color: var(--catppuccin-subtext0); }
+  .text-catppuccin-subtext1 { color: var(--catppuccin-subtext1); }
+  .text-catppuccin-surface0 { color: var(--catppuccin-surface0); }
+  .text-catppuccin-surface1 { color: var(--catppuccin-surface1); }
+  .text-catppuccin-surface2 { color: var(--catppuccin-surface2); }
+  .text-catppuccin-overlay0 { color: var(--catppuccin-overlay0); }
+  .text-catppuccin-overlay1 { color: var(--catppuccin-overlay1); }
+  .text-catppuccin-overlay2 { color: var(--catppuccin-overlay2); }
+  .text-catppuccin-blue { color: var(--catppuccin-blue); }
+  .text-catppuccin-lavender { color: var(--catppuccin-lavender); }
+  .text-catppuccin-sapphire { color: var(--catppuccin-sapphire); }
+  .text-catppuccin-sky { color: var(--catppuccin-sky); }
+  .text-catppuccin-teal { color: var(--catppuccin-teal); }
+  .text-catppuccin-green { color: var(--catppuccin-green); }
+  .text-catppuccin-yellow { color: var(--catppuccin-yellow); }
+  .text-catppuccin-peach { color: var(--catppuccin-peach); }
+  .text-catppuccin-red { color: var(--catppuccin-red); }
+  .text-catppuccin-mauve { color: var(--catppuccin-mauve); }
+  .text-catppuccin-pink { color: var(--catppuccin-pink); }
+  .text-catppuccin-flamingo { color: var(--catppuccin-flamingo); }
+  .text-catppuccin-rosewater { color: var(--catppuccin-rosewater); }
+
+  .bg-catppuccin-base { background-color: var(--catppuccin-base); }
+  .bg-catppuccin-mantle { background-color: var(--catppuccin-mantle); }
+  .bg-catppuccin-crust { background-color: var(--catppuccin-crust); }
+  .bg-catppuccin-text { background-color: var(--catppuccin-text); }
+  .bg-catppuccin-subtext0 { background-color: var(--catppuccin-subtext0); }
+  .bg-catppuccin-subtext1 { background-color: var(--catppuccin-subtext1); }
+  .bg-catppuccin-surface0 { background-color: var(--catppuccin-surface0); }
+  .bg-catppuccin-surface1 { background-color: var(--catppuccin-surface1); }
+  .bg-catppuccin-surface2 { background-color: var(--catppuccin-surface2); }
+  .bg-catppuccin-overlay0 { background-color: var(--catppuccin-overlay0); }
+  .bg-catppuccin-overlay1 { background-color: var(--catppuccin-overlay1); }
+  .bg-catppuccin-overlay2 { background-color: var(--catppuccin-overlay2); }
+  .bg-catppuccin-blue { background-color: var(--catppuccin-blue); }
+  .bg-catppuccin-lavender { background-color: var(--catppuccin-lavender); }
+  .bg-catppuccin-sapphire { background-color: var(--catppuccin-sapphire); }
+  .bg-catppuccin-sky { background-color: var(--catppuccin-sky); }
+  .bg-catppuccin-teal { background-color: var(--catppuccin-teal); }
+  .bg-catppuccin-green { background-color: var(--catppuccin-green); }
+  .bg-catppuccin-yellow { background-color: var(--catppuccin-yellow); }
+  .bg-catppuccin-peach { background-color: var(--catppuccin-peach); }
+  .bg-catppuccin-red { background-color: var(--catppuccin-red); }
+  .bg-catppuccin-mauve { background-color: var(--catppuccin-mauve); }
+  .bg-catppuccin-pink { background-color: var(--catppuccin-pink); }
+  .bg-catppuccin-flamingo { background-color: var(--catppuccin-flamingo); }
+  .bg-catppuccin-rosewater { background-color: var(--catppuccin-rosewater); }
+
+  .border-catppuccin-surface0 { border-color: var(--catppuccin-surface0); }
+  .border-catppuccin-surface1 { border-color: var(--catppuccin-surface1); }
+  .border-catppuccin-surface2 { border-color: var(--catppuccin-surface2); }
+  .border-catppuccin-blue { border-color: var(--catppuccin-blue); }
+  .border-catppuccin-green { border-color: var(--catppuccin-green); }
+  .border-catppuccin-yellow { border-color: var(--catppuccin-yellow); }
+  .border-catppuccin-red { border-color: var(--catppuccin-red); }
+
+  .hover\:bg-catppuccin-lavender:hover { background-color: var(--catppuccin-lavender); }
+  .hover\:text-catppuccin-lavender:hover { color: var(--catppuccin-lavender); }
+  .hover\:border-catppuccin-blue:hover { border-color: var(--catppuccin-blue); }
+
+  .focus\:border-catppuccin-blue:focus { border-color: var(--catppuccin-blue); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: transparent; }
+  51%, 100% { border-color: var(--catppuccin-blue); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s ease-out;
+}
