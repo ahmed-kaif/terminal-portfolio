@@ -12,12 +12,15 @@ export function useCommand(onSectionChange: (section: Section) => void) {
     about: "about",
     projects: "projects",
     skills: "skills",
+    publications: "publications",
     contact: "contact",
     ls: "home", // alias for home
     cd: "home", // alias for home
     cat: "about", // alias for about
     vim: "projects", // alias for projects
     top: "skills", // alias for skills
+    papers: "publications", // alias for publications
+    research: "publications", // alias for publications
     mail: "contact", // alias for contact
   };
 
@@ -68,6 +71,10 @@ export function useCommand(onSectionChange: (section: Section) => void) {
           onSectionChange("skills");
           break;
         case "5":
+          e.preventDefault();
+          onSectionChange("publications");
+          break;
+        case "6":
           e.preventDefault();
           onSectionChange("contact");
           break;

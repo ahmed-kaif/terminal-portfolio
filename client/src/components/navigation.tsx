@@ -6,7 +6,7 @@ interface NavigationProps {
 }
 
 export default function Navigation({ currentSection, onSectionChange }: NavigationProps) {
-  const sections: Section[] = ["home", "about", "projects", "skills", "contact"];
+  const sections: Section[] = ["home", "about", "projects", "skills", "publications", "contact"];
 
   const handleSectionClick = (section: Section) => {
     onSectionChange(section);
@@ -40,7 +40,7 @@ export default function Navigation({ currentSection, onSectionChange }: Navigati
       </div>
       
       <div className="text-catppuccin-overlay0 text-xs mb-2">
-        💡 Type commands below or use keyboard shortcuts (Ctrl+1-5) • Start typing for command input
+        💡 Type commands below or use keyboard shortcuts (Ctrl+1-6) • Start typing for command input
       </div>
     </div>
   );

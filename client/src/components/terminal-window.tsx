@@ -5,9 +5,10 @@ import HomeSection from "./sections/home-section";
 import AboutSection from "./sections/about-section";
 import ProjectsSection from "./sections/projects-section";
 import SkillsSection from "./sections/skills-section";
+import PublicationsSection from "./sections/publications-section";
 import ContactSection from "./sections/contact-section";
 
-export type Section = "home" | "about" | "projects" | "skills" | "contact";
+export type Section = "home" | "about" | "projects" | "skills" | "publications" | "contact";
 
 export default function TerminalWindow() {
   const [currentSection, setCurrentSection] = useState<Section>("home");
@@ -22,12 +23,15 @@ export default function TerminalWindow() {
     about: "about", 
     projects: "projects",
     skills: "skills",
+    publications: "publications",
     contact: "contact",
     ls: "home",
     cd: "home", 
     cat: "about",
     vim: "projects",
     top: "skills",
+    papers: "publications",
+    research: "publications",
     mail: "contact",
   };
 
@@ -80,6 +84,10 @@ export default function TerminalWindow() {
           setCurrentSection("skills");
           break;
         case "5":
+          e.preventDefault();
+          setCurrentSection("publications");
+          break;
+        case "6":
           e.preventDefault();
           setCurrentSection("contact");
           break;
@@ -144,6 +152,8 @@ export default function TerminalWindow() {
         return <ProjectsSection />;
       case "skills":
         return <SkillsSection />;
+      case "publications":
+        return <PublicationsSection />;
       case "contact":
         return <ContactSection />;
       default:
@@ -199,6 +209,13 @@ export default function TerminalWindow() {
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center">
+                      <span className="text-catppuccin-blue font-mono w-16">publications</span>
+                      <span className="text-catppuccin-subtext1 ml-2">Academic publications</span>
+                    </div>
+                    <div className="text-catppuccin-overlay0 text-xs ml-16">Aliases: papers, research</div>
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="flex items-center">
                       <span className="text-catppuccin-blue font-mono w-16">contact</span>
                       <span className="text-catppuccin-subtext1 ml-2">Contact information</span>
                     </div>
@@ -235,6 +252,10 @@ export default function TerminalWindow() {
                   </div>
                   <div className="flex items-center">
                     <span className="text-catppuccin-green font-mono w-20 text-xs">Ctrl+5</span>
+                    <span className="text-catppuccin-subtext1 ml-2">Go to Publications</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-catppuccin-green font-mono w-20 text-xs">Ctrl+6</span>
                     <span className="text-catppuccin-subtext1 ml-2">Go to Contact</span>
                   </div>
                   <div className="flex items-center">
