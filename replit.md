@@ -55,6 +55,8 @@ This is a modern full-stack web application that creates an interactive terminal
 
 ### Database Schema
 - **Users Table**: Basic user authentication structure with username and password fields
+- **Publications Table**: Academic publications with type (conference/journal), metadata, and status tracking
+- **Projects Table**: Portfolio projects with technologies, status, metrics, and timeline information
 - **Zod Validation**: Type-safe schema validation using drizzle-zod
 
 ## Data Flow
@@ -111,3 +113,5 @@ Preferred communication style: Simple, everyday language.
 
 Changelog:
 - July 08, 2025. Initial setup
+- July 08, 2025. Added Publications section with database integration for academic papers
+- July 08, 2025. Integrated Projects section with database storage, filtering, and enhanced UI
